@@ -1,0 +1,174 @@
+header div img {
+    width: 100%;
+    height: 20%;
+}
+
+header nav.bg-light {
+    background-color: rgb(108, 189, 162) !important;
+
+}
+
+button.btn-outline-success {
+    color: black;
+    border-color: black;
+}
+
+h2 {
+    text-align: center;
+}
+
+.btnCarritoNav {
+    cursor: pointer;
+    background-color: rgb(118, 201, 173);
+    border: 3px rgb(87, 152, 130) solid;
+
+}
+
+.btnCarritoNav:hover {
+    background-color: rgb(87, 152, 130);
+
+}
+
+
+.textoCarrito {
+    text-align: center;
+}
+
+#verdurasCompradas {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+}
+
+
+
+.reloj {
+    max-width: 40%;
+}
+
+.comprarExplicacion {
+    font-size: 28px;
+
+}
+
+.titulosEncabezado {
+    text-align: center;
+    font-size: 50px;
+    padding: 2%;
+    background-color: rgb(108, 189, 162);
+    margin: 4% 0%;
+}
+
+.subtitulo {
+    text-align: center;
+    font-size: 50px;
+    padding: 2%;
+}
+
+.explicacion {
+    padding: 6% 1%;
+}
+
+.container-fluid {
+    padding-left: 0% !important;
+    margin-left: 0% !important;
+    padding-right: 0% !important;
+    margin-right: 0% !important;
+
+}
+
+.imgBorder {
+    margin-top: 4%;
+    margin-bottom: 7%;
+    height: auto;
+}
+
+.hoverTitulo:hover {
+    position: absolute;
+
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 15px;
+
+}
+
+
+.categoriatitulo {
+    padding: 10px 20px;
+    color: black;
+}
+
+
+
+
+.footer__ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 2%;
+    text-decoration: none;
+    list-style: none;
+}
+
+.footer__ul li .footerLinks {
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+footer.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    font-family: "Montserrat", Sans-serif;
+    background-color: rgb(108, 189, 162);
+    margin-top: 0%;
+    padding-top: 4%;
+    height: auto;
+
+}
+
+div.centrarFooter {
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    padding: 1% 8%;
+}
+
+footer div.centrarFooter a.a {
+    color: black;
+    padding-top: 4%;
+    text-align: center;
+    font-size: 30px;
+
+
+}
+
+div.copy {
+    padding: 3px;
+    margin: 0;
+    text-align: center;
+    border-top: solid 2px white;
+    width: 100%;
+}
+
+
+
+
+a {
+    text-decoration: none;
+}
