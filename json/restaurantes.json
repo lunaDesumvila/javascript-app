@@ -1,0 +1,20 @@
+[{
+        "img": "./assets/img/carmelo.webp",
+        "link": "https://www.carmelorestaurant.com.ar/"
+    },
+    {
+        "img": "./assets/img/goula.png",
+        "link": "https://goulu.com.ar/"
+
+    },
+    {
+        "img": "./assets/img/italy2.JPG",
+        "link": "https://ititaly.com.ar/"
+
+    },
+    {
+        "img": "./assets/img/lamamma2.png",
+        "link": "https://www.lamammarestaurante.com.ar/"
+
+    }
+]

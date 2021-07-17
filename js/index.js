@@ -1,10 +1,149 @@
-//////////////////// PRECIOS BARATOS POR KILO //
-const baratos = verduras.filter(producto => producto.precio < 100);
-console.log(baratos);
+//////////////////// ARRAY VERDURAS //
+const verduras = [{
+    id: 1,
+    producto: "TOMATE",
+    precio: 140,
+    img: "./assets/img/tomate.jpg",
+    seleccionado: false
+  },
+  {
+    id: 2,
+    producto: "LECHUGA",
+    precio: 110,
+    img: "./assets/img/lechuga.png",
+    seleccionado: false
 
-//////////////////// VERDURA BUSQUEDA //
-const buscarCebolla = verduras.find(producto => producto.id === 7);
-console.log(buscarCebolla);
+  },
+  {
+    id: 3,
+    producto: "ZANAHORIA",
+    precio: 80,
+    img: "./assets/img/zanahoriaa.jpg",
+    seleccionado: false
+
+  },
+  {
+    id: 4,
+    producto: "REPOLLO",
+    precio: 85,
+    img: "./assets/img/repollo.jpg",
+    seleccionado: false
+
+  }, {
+    id: 5,
+    producto: "ZAPALLITO",
+    precio: 100,
+    img: "./assets/img/zapallito.jpg",
+    seleccionado: false
+
+  },
+  {
+    id: 6,
+    producto: "BERENJENA",
+    precio: 96,
+    img: "./assets/img/berenjena.jpg",
+    seleccionado: false
+
+  }, {
+    id: 7,
+    producto: "CEBOLLA",
+    precio: 70,
+    img: "./assets/img/cebolla.jpg",
+    seleccionado: false
+
+  },
+  {
+    id: 8,
+    producto: "PIMIENTO AMARRILLO",
+    precio: 280,
+    img: "./assets/img/pimiento-amarrillo.jpg",
+    seleccionado: false
+
+  }
+];
+console.log(verduras)
+
+//////////////////// ARRAY FRUTAS //
+const frutas = [{
+    id: 11,
+    producto: "SANDIA",
+    precio: 140,
+    img: "./assets/img/sandia.jpg",
+    seleccionado: false
+  },
+  {
+    id: 12,
+    producto: "BANANA",
+    precio: 110,
+    img: "./assets/img/banana.jpg",
+    seleccionado: false
+
+  },
+  {
+    id: 13,
+    producto: "MANZANA ROJA",
+    precio: 80,
+    img: "./assets/img/manzana.jpg",
+    seleccionado: false
+
+  },
+  {
+    id: 14,
+    producto: "NARANJA",
+    precio: 85,
+    img: "./assets/img/naranja.jpg",
+    seleccionado: false
+
+  }, {
+    id: 15,
+    producto: "FRUTILLA",
+    precio: 100,
+    img: "./assets/img/frutilla-180x180.jpg",
+    seleccionado: false
+
+  },
+  {
+    id: 16,
+    producto: "MANDARINA",
+    precio: 96,
+    img: "./assets/img/mandarina.jpg",
+    seleccionado: false
+
+  }, {
+    id: 17,
+    producto: "UVA",
+    precio: 70,
+    img: "./assets/img/uva.jpg",
+    seleccionado: false
+
+  },
+  {
+    id: 18,
+    producto: "MELON",
+    precio: 280,
+    img: "./assets/img/melon.png",
+    seleccionado: false
+
+  }
+];
+console.log(frutas)
+
+
+/////////////////// ANIMACION //
+$('.titulosEncabezado').fadeIn(1500)
+
+////ANIMACION TITULO PROYECTO
+$("#verdu").animate({
+    rigth: '500px',
+    height: '140px',
+
+  },
+  3000,
+).css({
+  "color": "black",
+  "font-size": "70px",
+
+})
 
 //////////////////// SECCION VERDURAS //
 for (let element of verduras) {
@@ -50,81 +189,119 @@ for (let element of frutas) {
                                 </svg>
                               </button>
                       </div>
-                </div>
-            
+                </div>    
               `)
 }
 
 ////////////////// BOTONES PARA SUMAR AL CARRITO  //
-$(document).ready(function () {
-  console.log("el dom esta listo")
 
-  $('.btnSumarCarrito').click(function (event) {
-    const buttonClickeado = event.target;
-    console.log(buttonClickeado.id);
-    const sumarVerdura = verduras.find((verduraItem) => verduraItem.id === parseInt(buttonClickeado.id));
-    const sumarFruta = frutas.find((frutasItem) => frutasItem.id === parseInt(buttonClickeado.id));
+$('.btnSumarCarrito').click(function (event) {
+  const buttonClickeado = event.target;
+  console.log(buttonClickeado.id);
+  const sumarVerdura = verduras.find((verduraItem) => verduraItem.id === parseInt(buttonClickeado.id));
+  const sumarFruta = frutas.find((frutasItem) => frutasItem.id === parseInt(buttonClickeado.id));
 
-    if (sumarVerdura) {
-      sumarVerdura.seleccionado = true;
-      swal("Listo!", "Se agrego al carrito", "success");
-      console.log(verduras);
-    } else {
-      sumarFruta.seleccionado = true;
-      swal("Listo!", "Se agrego al carrito", "success");
-      console.log(frutas);
-    }
+  if (sumarVerdura) {
+    sumarVerdura.seleccionado = true;
+    swal("Listo!", "Se agrego al carrito", "success");
+    console.log(verduras);
+  } else {
+    sumarFruta.seleccionado = true;
+    swal("Listo!", "Se agrego al carrito", "success");
+    console.log(frutas);
+  }
 
-  })
 })
+
 
 ////////////////// BOTON CARRITO NAVEGADOR //
-$(document).ready(function () {
-  console.log("el dom esta listo")
-  $('#miCarrito').click(function () {
-    console.log("Respuesta a un click");
 
-    ////VERDURAS
-    const verdurasCarrito = verduras.filter((verduraItem) => verduraItem.seleccionado);
-    console.log(verdurasCarrito);
-    sessionStorage.setItem('verdurasCarrito', JSON.stringify(verdurasCarrito));
-    let totalVerduras = 0;
+$('#miCarrito').click(function () {
+  console.log("Respuesta a un click");
 
-    for (const verdura of verdurasCarrito) {
-      totalVerduras += parseFloat(verdura.precio);
-      $('#verdurasCompradas').append(`
-                  <div class="col-lg-6">
-                  <div class="card" style="width: 28rem; text-align: center; margin: 2px; background-color: rgb(238, 168, 18)">
-                    <div class="card-body">
-                      <h3 class="card-title"> ${verdura.producto} $${verdura.precio} </h3>
-                    </div>
-                    </div>
+  $('.textoCarrito').show()
+  $('.carritoInsumos').show()
+
+
+
+  const hijos = $(".eliminar")
+  console.log(hijos)
+  for (const hijo of hijos) {
+    hijo.remove()
+  }
+  ////VERDURAS
+  const verdurasCarrito = verduras.filter((verduraItem) => verduraItem.seleccionado);
+  console.log(verdurasCarrito);
+  sessionStorage.setItem('verdurasCarrito', JSON.stringify(verdurasCarrito));
+  let totalVerduras = 0;
+
+
+  for (const verdura of verdurasCarrito) {
+    totalVerduras += parseFloat(verdura.precio);
+    $('#verdurasCompradas').append(`
+                  <div class="col-lg-6 eliminar">
+                      <div class="card " style="width: 20rem; text-align: center; margin: 2px; background-color: rgb(108, 189, 162)">
+                        <div class="card-body " >
+                          <h3 class="card-title"> ${verdura.producto} $${verdura.precio} </h3>
+                        </div>
+                      </div>
                   </div>`)
-    }
 
-    ///-FRUTAS
-    const frutasCarrito = frutas.filter((frutaItem) => frutaItem.seleccionado);
-    console.log(frutasCarrito);
-    sessionStorage.setItem('frutasCarrito', JSON.stringify(frutasCarrito));
-    let totalFrutas = 0;
+  }
 
-    for (const frutas of frutasCarrito) {
-      totalFrutas += parseFloat(frutas.precio);
-      $('#verdurasCompradas').append(`
-                    <div class="col-lg-6">
-                    <div class="card" style="width: 28rem; text-align: center; margin: 2px; background-color: rgb(238, 168, 18)">
-                      <div class="card-body">
-                        <h3 class="card-title"> ${frutas.producto} $${frutas.precio} </h3>
-                      </div>
-                      </div>
+
+  ///-FRUTAS
+  const frutasCarrito = frutas.filter((frutaItem) => frutaItem.seleccionado);
+  console.log(frutasCarrito);
+  sessionStorage.setItem('frutasCarrito', JSON.stringify(frutasCarrito));
+  let totalFrutas = 0;
+
+  for (const frutas of frutasCarrito) {
+    totalFrutas += parseFloat(frutas.precio);
+    $('#verdurasCompradas').append(`
+                    <div class="col-lg-6 eliminar">
+                        <div class="card" style="width: 20rem; text-align: center; margin: 2px; background-color: rgb(216, 146, 16)">
+                            <div class="card-body">
+                              <h3 class="card-title"> ${frutas.producto} $${frutas.precio} </h3>
+                            </div>
+                        </div>
                     </div>`)
-    }
+  }
 
-    ///-PRECIO TOTAL 
-    const total = totalVerduras + totalFrutas;
-    const envio = total + 200
-    $('#carritoTotal').append(`<h2>Total:$ ${total} <br>  Con envío: $${envio}</h2>
+
+  ///-PRECIO TOTAL 
+  const total = totalVerduras + totalFrutas;
+  const envio = total + 200
+  $('#carritoTotal').append(`<h2 class="eliminar">Total:$ ${total} <br>  Con envío: $${envio}</h2>
     `)
 
-  });
-})
+});
+
+//////PARA Q NO SE REPITA EL CARRITO
+const hijos = $(".eliminar")
+for (const hijo of hijos) {
+  hijo.remove()
+}
+
+
+//////RESTAURANTES QUE NOS COMPRAN
+///url del archivo JSON local
+const URLJSON = "json/restaurantes.json"
+
+$.getJSON(URLJSON, function (respuesta, estado) {
+  if (estado === "success") {
+    let misDatos = respuesta;
+    const hijosResto = $(".imgResto");
+    console.log(hijosResto)
+    for (const hijo of hijosResto) {
+      hijo.remove();
+    }
+    for (const dato of misDatos) {
+      $("#restaurantes").append(`<div class="col-lg-6 imgResto" >
+                                        <a href="${dato.link}" target="_blank">
+                                        <img src="${dato.img}">
+                                        </a>
+                                    </div>`)
+    }
+  }
+});

@@ -19,14 +19,37 @@ h2 {
 
 .btnCarritoNav {
     cursor: pointer;
-    background-color: rgb(118, 201, 173);
+    background-color: rgb(106, 179, 155);
     border: 3px rgb(87, 152, 130) solid;
 
 }
 
-.btnCarritoNav:hover {
-    background-color: rgb(87, 152, 130);
+#formulario {
+    margin-left: 30%;
+    margin-bottom: 6%;
+    background-color: rgb(221, 226, 231);
+    margin-right: 1%;
+}
 
+form {
+    padding: 2%;
+}
+
+.carritoInsumos {
+    display: none;
+    padding: 1%;
+    margin-top: 4% !important;
+    text-align: center;
+    background-color: rgba(179, 170, 170, 0.524);
+    margin: auto;
+}
+
+.textoCarrito {
+    display: none;
+}
+
+.btnCarritoNav:hover {
+    background-color: rgb(111, 204, 173)
 }
 
 
@@ -41,7 +64,11 @@ h2 {
 
 }
 
-
+#economico {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 
 .reloj {
     max-width: 40%;
@@ -53,10 +80,11 @@ h2 {
 }
 
 .titulosEncabezado {
+    display: none;
     text-align: center;
     font-size: 50px;
     padding: 2%;
-    background-color: rgb(108, 189, 162);
+    background-color: rgb(118, 201, 173);
     margin: 4% 0%;
 }
 
@@ -80,7 +108,7 @@ h2 {
 
 .imgBorder {
     margin-top: 4%;
-    margin-bottom: 7%;
+    margin-bottom: 2%;
     height: auto;
 }
 
@@ -104,7 +132,18 @@ h2 {
 }
 
 
+.imgResto {
+    text-align: center;
+    padding: 4%;
+}
 
+
+
+.irInicio {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20%;
+}
 
 .footer__ul {
     display: flex;
