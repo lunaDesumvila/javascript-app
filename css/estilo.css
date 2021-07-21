@@ -142,7 +142,7 @@ form {
 .irInicio {
     display: flex;
     justify-content: flex-end;
-    padding-right: 20%;
+
 }
 
 .footer__ul {

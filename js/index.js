@@ -63,6 +63,7 @@ const verduras = [{
 ];
 console.log(verduras)
 
+
 //////////////////// ARRAY FRUTAS //
 const frutas = [{
     id: 11,
@@ -129,9 +130,34 @@ const frutas = [{
 console.log(frutas)
 
 
+//////////////////// ARRAY BOLSONES //
+const bolsones = [{
+  id: 19,
+  producto: "PAPA, ZANOHORIA, CEBOLLA, LECHUGA, BANANA Y TOMATE",
+  precio: 480,
+  img: "./assets/img/bolsonverdu.png",
+  kilos: 6,
+  seleccionado: false
+}, {
+  id: 20,
+  producto: "PAPA, PIMIENTO AMARILLO, LECHUGA, CEBOLLA, TOMATE, NARANJA, MANZANA Y BANANA",
+  precio: 590,
+  img: "./assets/img/bolsonverdu.png",
+  kilos: 8,
+  seleccionado: false
+}, {
+  id: 21,
+  producto: "PAPA, ZANAHORIA, CEBOLLA, LIMON, TOMATE, REPOLLO, NARANJA, UVA, FRUTILLA Y MANZANA",
+  precio: 720,
+  img: "./assets/img/bolsonverdu.png",
+  kilos: 10,
+  seleccionado: false
+}];
+console.log(bolsones)
+
+
 /////////////////// ANIMACION //
 $('.titulosEncabezado').fadeIn(1500)
-
 ////ANIMACION TITULO PROYECTO
 $("#verdu").animate({
     rigth: '500px',
@@ -142,8 +168,8 @@ $("#verdu").animate({
 ).css({
   "color": "black",
   "font-size": "70px",
-
 })
+
 
 //////////////////// SECCION VERDURAS //
 for (let element of verduras) {
@@ -169,60 +195,86 @@ for (let element of verduras) {
               `)
 }
 
+
 //////////////////// SECCION FRUTAS //
 for (let element of frutas) {
   $("#ventaFrutas").append(`
               <div class="col-lg-3 col-sm-12 ">
-                      <div class="img1 col producto mb-5 animate__animated animate__backInDown">
-                              <img data-aos="fade-right" class="producto__imagen mx-auto d-block rounded"
-                              src=${element.img} >
-                              <p class="text-center">${element.producto}</p>
-                              <p class="text-center">$ ${element.precio}</p>
-                              <p class="text-center">1kg</p>
-                              <button  id = ${element.id} type="button" class="btn btnSumarCarrito btn-outline-success btn-rounded mx-auto d-block fw-bold" data-mdb-ripple-color="dark">Sumar al carro
-                                <svg xmlns="http://www.w3.org/2000/svg" class="producto__icon" width="50" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                  <circle cx="6" cy="19" r="2"></circle>
-                                  <circle cx="17" cy="19" r="2"></circle>
-                                  <path d="M17 17h-11v-14h-2"></path>
-                                  <path d="M6 5l14 1l-1 7h-13"></path>
-                                </svg>
-                              </button>
-                      </div>
-                </div>    
+                <div class="img1 col producto mb-5 animate__animated animate__backInDown">
+                        <img data-aos="fade-right" class="producto__imagen mx-auto d-block rounded"
+                        src=${element.img} >
+                        <p class="text-center">${element.producto}</p>
+                        <p class="text-center">$ ${element.precio}</p>
+                        <p class="text-center">1kg</p>
+                        <button  id = ${element.id} type="button" class="btn btnSumarCarrito btn-outline-success btn-rounded mx-auto d-block fw-bold" data-mdb-ripple-color="dark">Sumar al carro
+                          <svg xmlns="http://www.w3.org/2000/svg" class="producto__icon" width="50" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <circle cx="6" cy="19" r="2"></circle>
+                            <circle cx="17" cy="19" r="2"></circle>
+                            <path d="M17 17h-11v-14h-2"></path>
+                            <path d="M6 5l14 1l-1 7h-13"></path>
+                          </svg>
+                        </button>
+                </div>
+              </div>    
               `)
 }
 
-////////////////// BOTONES PARA SUMAR AL CARRITO  //
 
+//////////////////// SECCION BOLSONES //
+for (let element of bolsones) {
+  $("#ventaBolsones").append(`
+              <div class="col-lg-4 col-sm-12 ">
+                <div class="img1 col producto mb-5 animate__animated animate__backInDown">
+                      <img data-aos="fade-right" class="producto__imagen mx-auto d-block rounded"
+                      src=${element.img} >
+                      <p class="text-center">${element.producto}</p>
+                      <p class="text-center">$ ${element.precio}</p>
+                      <p class="text-center">${element.kilos} kg</p>
+                      <button  id = ${element.id} type="button" class="btn btnSumarCarrito btn-outline-success btn-rounded mx-auto d-block fw-bold" data-mdb-ripple-color="dark">Sumar al carro
+                        <svg xmlns="http://www.w3.org/2000/svg" class="producto__icon" width="50" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <circle cx="6" cy="19" r="2"></circle>
+                          <circle cx="17" cy="19" r="2"></circle>
+                          <path d="M17 17h-11v-14h-2"></path>
+                          <path d="M6 5l14 1l-1 7h-13"></path>
+                        </svg>
+                      </button>
+                </div>
+              </div>
+              `)
+}
+
+
+////////////////// BOTONES PARA SUMAR AL CARRITO  //
 $('.btnSumarCarrito').click(function (event) {
   const buttonClickeado = event.target;
   console.log(buttonClickeado.id);
   const sumarVerdura = verduras.find((verduraItem) => verduraItem.id === parseInt(buttonClickeado.id));
   const sumarFruta = frutas.find((frutasItem) => frutasItem.id === parseInt(buttonClickeado.id));
+  const sumarbolsones = bolsones.find((bolsonItem) => bolsonItem.id === parseInt(buttonClickeado.id));
 
   if (sumarVerdura) {
     sumarVerdura.seleccionado = true;
     swal("Listo!", "Se agrego al carrito", "success");
     console.log(verduras);
-  } else {
+  } else if (sumarFruta) {
     sumarFruta.seleccionado = true;
     swal("Listo!", "Se agrego al carrito", "success");
     console.log(frutas);
+  } else {
+    sumarbolsones.seleccionado = true;
+    swal("Listo!", "Se agrego al carrito", "success");
+    console.log(bolsones);
   }
-
 })
 
 
 ////////////////// BOTON CARRITO NAVEGADOR //
-
 $('#miCarrito').click(function () {
   console.log("Respuesta a un click");
-
   $('.textoCarrito').show()
   $('.carritoInsumos').show()
-
-
 
   const hijos = $(".eliminar")
   console.log(hijos)
@@ -235,7 +287,6 @@ $('#miCarrito').click(function () {
   sessionStorage.setItem('verdurasCarrito', JSON.stringify(verdurasCarrito));
   let totalVerduras = 0;
 
-
   for (const verdura of verdurasCarrito) {
     totalVerduras += parseFloat(verdura.precio);
     $('#verdurasCompradas').append(`
@@ -246,11 +297,8 @@ $('#miCarrito').click(function () {
                         </div>
                       </div>
                   </div>`)
-
   }
-
-
-  ///-FRUTAS
+  ////FRUTAS
   const frutasCarrito = frutas.filter((frutaItem) => frutaItem.seleccionado);
   console.log(frutasCarrito);
   sessionStorage.setItem('frutasCarrito', JSON.stringify(frutasCarrito));
@@ -267,15 +315,32 @@ $('#miCarrito').click(function () {
                         </div>
                     </div>`)
   }
+  ////BOLSONES
+  const bolsonCarrito = bolsones.filter((bolsonItem) => bolsonItem.seleccionado);
+  console.log(bolsonCarrito);
+  sessionStorage.setItem('bolsonCarrito', JSON.stringify(bolsonCarrito));
+  let totalbolson = 0;
 
+  for (const bolson of bolsonCarrito) {
+    totalbolson += parseFloat(bolson.precio);
+    $('#verdurasCompradas').append(`
+                      <div class="col-lg-6 eliminar">
+                          <div class="card" style="width: 20rem; text-align: center; margin: 2px; background-color: rgb(216, 146, 16)">
+                              <div class="card-body">
+                                <h3 class="card-title"> ${bolson.producto} $${bolson.precio} </h3>
+                              </div>
+                          </div>
+                      </div>`)
+  }
 
   ///-PRECIO TOTAL 
-  const total = totalVerduras + totalFrutas;
+  const total = totalVerduras + totalFrutas + totalbolson;
   const envio = total + 200
   $('#carritoTotal').append(`<h2 class="eliminar">Total:$ ${total} <br>  Con envío: $${envio}</h2>
     `)
 
 });
+
 
 //////PARA Q NO SE REPITA EL CARRITO
 const hijos = $(".eliminar")
@@ -285,9 +350,7 @@ for (const hijo of hijos) {
 
 
 //////RESTAURANTES QUE NOS COMPRAN
-///url del archivo JSON local
 const URLJSON = "json/restaurantes.json"
-
 $.getJSON(URLJSON, function (respuesta, estado) {
   if (estado === "success") {
     let misDatos = respuesta;
