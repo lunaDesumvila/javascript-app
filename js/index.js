@@ -276,6 +276,7 @@ $('#miCarrito').click(function () {
   $('.textoCarrito').show()
   $('.carritoInsumos').show()
 
+  //////PARA Q NO SE REPITA EL CARRITO
   const hijos = $(".eliminar")
   console.log(hijos)
   for (const hijo of hijos) {
@@ -296,7 +297,8 @@ $('#miCarrito').click(function () {
                           <h3 class="card-title"> ${verdura.producto} $${verdura.precio} </h3>
                         </div>
                       </div>
-                  </div>`)
+                  </div>
+                  `)
   }
   ////FRUTAS
   const frutasCarrito = frutas.filter((frutaItem) => frutaItem.seleccionado);
@@ -339,15 +341,18 @@ $('#miCarrito').click(function () {
   $('#carritoTotal').append(`<h2 class="eliminar">Total:$ ${total} <br>  Con envío: $${envio}</h2>
     `)
 
+
 });
 
 
-//////PARA Q NO SE REPITA EL CARRITO
-const hijos = $(".eliminar")
-for (const hijo of hijos) {
-  hijo.remove()
-}
+$('.btnEliminarProducto').click(function () {
 
+  const eliminarProd = $('.basura')
+  for (const hijo of eliminarProd) {
+    hijo.remove()
+  }
+
+})
 
 //////RESTAURANTES QUE NOS COMPRAN
 const URLJSON = "json/restaurantes.json"
@@ -360,11 +365,11 @@ $.getJSON(URLJSON, function (respuesta, estado) {
       hijo.remove();
     }
     for (const dato of misDatos) {
-      $("#restaurantes").append(`<div class="col-lg-6 imgResto" >
+      $("#restaurantes").append(` <div class="col-lg-6 imgResto" >
                                         <a href="${dato.link}" target="_blank">
                                         <img src="${dato.img}">
                                         </a>
-                                    </div>`)
+                                  </div>`)
     }
   }
 });
