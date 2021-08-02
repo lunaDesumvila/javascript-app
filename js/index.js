@@ -338,20 +338,16 @@ $('#miCarrito').click(function () {
   ///-PRECIO TOTAL 
   const total = totalVerduras + totalFrutas + totalbolson;
   const envio = total + 200
-  $('#carritoTotal').append(`<h2 class="eliminar">Total:$ ${total} <br>  Con envío: $${envio}</h2>
+  $('#carritoTotal').append(`<h2 class="eliminar">Total:$ ${total}<br>Con envío: $${envio}</h2>
     `)
 
 
 });
 
-
+//////BOTON PARA VACIAR CARRITO
 $('.btnEliminarProducto').click(function () {
-
-  const eliminarProd = $('.basura')
-  for (const hijo of eliminarProd) {
-    hijo.remove()
-  }
-
+  $('#verdurasCompradas').empty()
+  $('#carritoTotal').empty()
 })
 
 //////RESTAURANTES QUE NOS COMPRAN
